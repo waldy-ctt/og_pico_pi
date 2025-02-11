@@ -1,0 +1,22 @@
+[package]
+name = "og_pico_pi"
+version = "0.1.0"
+edition = "2021"
+
+
+[target.thumbv6m-none-eabi]
+runner = "probe-run --chip RP2040"
+
+[dependencies]
+cortex-m = {version = "0.7.7", features = ["critical-section-single-core"]}
+cortex-m-rt = {version = "0.7.5"}
+embedded-hal =  "1.0.0"
+panic-halt = "1.0.0"
+rp2040-boot2 = "0.3.0"
+rp2040-hal = "0.11.0"
+defmt-rtt = "0.4.1"
+
+[[bin]]
+name = "og_pico_pi"
+path = "src/main.rs"
+test = false
